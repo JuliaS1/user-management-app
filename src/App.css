@@ -1,0 +1,102 @@
+/* src/App.css */
+
+/* Resetowanie stylów */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ustawienia bazowe dla ciała strony */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Kontener całej aplikacji */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0; /* Ustawienie padding na zero, by nagłówek był wyróżniony */
+}
+
+/* Stylizacja nagłówka */
+.App-header {
+  background: linear-gradient(135deg, #6a1b9a, #a742a7); /* Fioletowe tło */
+  width: 100%;
+  padding: 20px 30px;
+  margin-bottom: 40px; /* Margines na dole */
+  text-align: center;
+  border-radius: 0 0 15px 15px; /* Zaokrąglenie dolnych rogów */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+}
+
+/* Stylizacja tekstu nagłówka */
+.App-header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Styl dla sekcji filtrowania */
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Styl dla tabeli użytkowników */
+.user-table {
+  width: 100%;
+  max-width: 1200px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Nagłówki tabeli */
+.user-table th {
+  background-color: #4a90e2;
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Wiersze tabeli */
+.user-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  color: #555;
+}
+
+/* Efekty dla wierszy */
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background-color: #e6f7ff;
+  cursor: pointer;
+}
+
+/* Styl dla komunikatów (ładowanie, błędy) */
+p {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 10px 0;
+}
+

@@ -1,0 +1,68 @@
+
+.table-container {
+  max-width: calc(100% - 100px); 
+  margin: 0 auto; 
+  padding: 0 50px;
+  overflow-x: auto; 
+  border-radius: 8px; 
+ }
+
+
+table {
+  border-collapse: collapse; 
+  background-color: #ffffff; 
+  border-radius: 8px; 
+  overflow: hidden; 
+  width: 100%; 
+  table-layout: fixed; 
+}
+
+
+th {
+  background-color: #a742a7; 
+  color: #ffffff; 
+  font-weight: bold; 
+  padding: 12px 15px; 
+  border-bottom: 2px solid #ffffff; /* Oddzielenie nagłówków od treści */
+  text-align: left; /* Wyrównanie tekstu do lewej */
+}
+
+/* Komórki tabeli */
+td {
+  padding: 12px 15px; /* Padding w komórkach */
+  border-bottom: 1px solid #eee; /* Subtelna linia oddzielająca wiersze */
+  color: #555; /* Kolor tekstu w komórkach */
+  word-wrap: break-word; /* Zawijanie długich słów */
+}
+
+/* Kolor tła dla parzystych wierszy */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Kolor tła wiersza przy najechaniu */
+tr:hover {
+  background-color: #e6f7ff;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Płynne przejście tła */
+}
+
+/* Ustalenie szerokości kolumn */
+th:nth-child(1), td:nth-child(1) { width: 25%; }
+th:nth-child(2), td:nth-child(2) { width: 25%; }
+th:nth-child(3), td:nth-child(3) { width: 30%; }
+th:nth-child(4), td:nth-child(4) { width: 20%; }
+
+/* Komunikat o braku wyników */
+.no-results {
+  font-size: 1.2rem;
+  color: #6a1b9a; /* Kolor tekstu */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto; /* Wyśrodkowanie komunikatu */
+  max-width: 600px; /* Maksymalna szerokość dla lepszej czytelności */
+  text-align: center; /* Wyśrodkowanie tekstu */
+}
