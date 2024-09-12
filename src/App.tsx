@@ -8,7 +8,7 @@ import SearchFilters from './components/SearchFilters';
 import './App.css'; 
 const App: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { users, filteredUsers, loading, error } = useSelector((state: RootState) => state.users);
+  const {filteredUsers, loading, error } = useSelector((state: RootState) => state.users);
 
   useEffect(() => {
     dispatch(fetchUsers());
