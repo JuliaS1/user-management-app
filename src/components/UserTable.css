@@ -1,8 +1,8 @@
 .table-container {
-  max-width: 100%; /* Ustaw maksymalną szerokość na 100% */
+  max-width: 100%; /* Pełna szerokość kontenera */
   margin: 0 auto; 
-  padding: 0 50px;
-  overflow-x: auto; 
+  padding: 0 20px; /* Zmniejszony padding dla responsywności */
+  overflow-x: auto; /* Przewijanie w poziomie */
   border-radius: 8px; 
 }
 
@@ -12,7 +12,7 @@ table {
   border-radius: 8px; 
   overflow: hidden; 
   width: 100%; 
-  table-layout: fixed; /* Użycie "fixed" do utrzymania szerokości kolumn */
+  table-layout: fixed; /* Zachowanie stałej szerokości kolumn */
 }
 
 th {
@@ -28,7 +28,7 @@ td {
   padding: 12px 15px; 
   border-bottom: 1px solid #eee; 
   color: #555; 
-  word-wrap: break-word; 
+  word-wrap: break-word; /* Zawijanie długich słów */
 }
 
 tr:nth-child(even) {
@@ -65,8 +65,7 @@ th:nth-child(4), td:nth-child(4) { width: 20%; }
 /* Dla mniejszych ekranów np. tabletów */
 @media (max-width: 1024px) {
   .table-container {
-    padding: 0 20px; /* Zmniejszony padding */
-    max-width: 100%; 
+    padding: 0 10px; /* Zmniejszony padding */
   }
 
   th, td {
@@ -74,12 +73,12 @@ th:nth-child(4), td:nth-child(4) { width: 20%; }
     padding: 10px; 
   }
 
-  /* Zwiększenie elastyczności kolumn */
+  /* Dostosowanie szerokości kolumn dla tabletów */
   th:nth-child(1), td:nth-child(1),
   th:nth-child(2), td:nth-child(2),
   th:nth-child(3), td:nth-child(3),
   th:nth-child(4), td:nth-child(4) {
-    width: auto; /* Kolumny są elastyczne */
+    width: auto; /* Kolumny bardziej elastyczne */
   }
 }
 
@@ -87,30 +86,34 @@ th:nth-child(4), td:nth-child(4) { width: 20%; }
 @media (max-width: 600px) {
   .table-container {
     padding: 0 5px; /* Minimalny padding */
-    max-width: 100%; 
   }
 
   table {
-    font-size: 0.85rem; 
-    table-layout: auto; /* Automatyczne dostosowanie kolumn */
+    font-size: 0.85rem; /* Mniejsza czcionka */
+    table-layout: auto; /* Automatyczne dostosowanie szerokości kolumn */
   }
 
   th, td {
-    padding: 8px; 
+    padding: 8px; /* Mniejszy padding */
   }
 
+  /* Dostosowanie szerokości kolumn */
   th:nth-child(1), td:nth-child(1),
   th:nth-child(2), td:nth-child(2),
   th:nth-child(3), td:nth-child(3),
   th:nth-child(4), td:nth-child(4) {
-    width: 100%; /* Kolumny zajmują całą szerokość */
-    display: block; /* Kolumny jako bloki na małych ekranach */
-    text-align: left; /* Wyrównanie tekstu na lewo */
+    width: auto; /* Kolumny rozciągają się na całą szerokość */
   }
 
+  /* Układ tabeli na bardzo małych ekranach */
   tr {
     display: block; /* Wiersze w trybie blokowym */
     margin-bottom: 10px; /* Dodanie odstępu między wierszami */
+  }
+
+  th, td {
+    display: block; /* Komórki jako bloki */
+    width: 100%; /* Szerokość komórek na całą szerokość */
   }
 
   td::before {
