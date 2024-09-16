@@ -1,5 +1,5 @@
 .table-container {
-  max-width: calc(100% - 100px); 
+  max-width: 100%; /* Ustaw maksymalną szerokość na 100% */
   margin: 0 auto; 
   padding: 0 50px;
   overflow-x: auto; 
@@ -12,7 +12,7 @@ table {
   border-radius: 8px; 
   overflow: hidden; 
   width: 100%; 
-  table-layout: fixed; 
+  table-layout: fixed; /* Użycie "fixed" do utrzymania szerokości kolumn */
 }
 
 th {
@@ -20,15 +20,15 @@ th {
   color: #ffffff; 
   font-weight: bold; 
   padding: 12px 15px; 
-  border-bottom: 2px solid #ffffff; /* Oddzielenie nagłówków od treści */
-  text-align: left; /* Wyrównanie tekstu do lewej */
+  border-bottom: 2px solid #ffffff; 
+  text-align: left;
 }
 
 td {
-  padding: 12px 15px; /* Padding w komórkach */
-  border-bottom: 1px solid #eee; /* Subtelna linia oddzielająca wiersze */
-  color: #555; /* Kolor tekstu w komórkach */
-  word-wrap: break-word; /* Zawijanie długich słów */
+  padding: 12px 15px; 
+  border-bottom: 1px solid #eee; 
+  color: #555; 
+  word-wrap: break-word; 
 }
 
 tr:nth-child(even) {
@@ -38,7 +38,7 @@ tr:nth-child(even) {
 tr:hover {
   background-color: #e6f7ff;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Płynne przejście tła */
+  transition: background-color 0.3s ease;
 }
 
 /* Ustalenie szerokości kolumn dla większych ekranów */
@@ -49,15 +49,15 @@ th:nth-child(4), td:nth-child(4) { width: 20%; }
 
 .no-results {
   font-size: 1.2rem;
-  color: #6a1b9a; /* Kolor tekstu */
+  color: #6a1b9a; 
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px auto; /* Wyśrodkowanie komunikatu */
-  max-width: 600px; /* Maksymalna szerokość dla lepszej czytelności */
-  text-align: center; /* Wyśrodkowanie tekstu */
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
 }
 
 /* MEDIA QUERIES */
@@ -65,43 +65,59 @@ th:nth-child(4), td:nth-child(4) { width: 20%; }
 /* Dla mniejszych ekranów np. tabletów */
 @media (max-width: 1024px) {
   .table-container {
-    padding: 0 30px; /* Mniejszy padding */
-    max-width: 100%; /* Pełna szerokość dla tabletów */
+    padding: 0 20px; /* Zmniejszony padding */
+    max-width: 100%; 
   }
 
   th, td {
-    font-size: 0.9rem; /* Zmniejszenie rozmiaru czcionki */
-    padding: 10px; /* Mniejszy padding w komórkach */
+    font-size: 0.9rem; /* Mniejsza czcionka */
+    padding: 10px; 
   }
 
+  /* Zwiększenie elastyczności kolumn */
   th:nth-child(1), td:nth-child(1),
   th:nth-child(2), td:nth-child(2),
   th:nth-child(3), td:nth-child(3),
   th:nth-child(4), td:nth-child(4) {
-    width: 100%; /* Kolumny mają elastyczną szerokość */
+    width: auto; /* Kolumny są elastyczne */
   }
 }
 
 /* Dla małych ekranów np. smartfonów */
 @media (max-width: 600px) {
   .table-container {
-    padding: 0 10px; /* Minimalny padding */
-    max-width: 100%; /* Pełna szerokość */
+    padding: 0 5px; /* Minimalny padding */
+    max-width: 100%; 
   }
 
   table {
-    font-size: 0.85rem; /* Jeszcze mniejszy tekst na telefonach */
-    table-layout: auto; /* Automatyczne dostosowanie szerokości kolumn */
+    font-size: 0.85rem; 
+    table-layout: auto; /* Automatyczne dostosowanie kolumn */
   }
 
   th, td {
-    padding: 8px; /* Mniejszy padding */
+    padding: 8px; 
   }
 
   th:nth-child(1), td:nth-child(1),
   th:nth-child(2), td:nth-child(2),
   th:nth-child(3), td:nth-child(3),
   th:nth-child(4), td:nth-child(4) {
-    width: auto; /* Kolumny rozciągają się na całą szerokość */
+    width: 100%; /* Kolumny zajmują całą szerokość */
+    display: block; /* Kolumny jako bloki na małych ekranach */
+    text-align: left; /* Wyrównanie tekstu na lewo */
+  }
+
+  tr {
+    display: block; /* Wiersze w trybie blokowym */
+    margin-bottom: 10px; /* Dodanie odstępu między wierszami */
+  }
+
+  td::before {
+    content: attr(data-label); /* Dodanie etykiet do komórek na małych ekranach */
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
   }
 }
