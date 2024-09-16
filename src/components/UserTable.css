@@ -1,10 +1,12 @@
+
 .table-container {
-  max-width: 100%; /* Pełna szerokość kontenera */
+  max-width: calc(100% - 100px); 
   margin: 0 auto; 
-  padding: 0 20px; /* Padding dla lepszej responsywności */
-  overflow-x: auto; /* Przewijanie w poziomie */
+  padding: 0 50px;
+  overflow-x: auto; 
   border-radius: 8px; 
-}
+ }
+
 
 table {
   border-collapse: collapse; 
@@ -12,33 +14,37 @@ table {
   border-radius: 8px; 
   overflow: hidden; 
   width: 100%; 
-  table-layout: fixed; /* Stała szerokość kolumn */
+  table-layout: fixed; 
 }
+
 
 th {
   background-color: #a742a7; 
   color: #ffffff; 
   font-weight: bold; 
   padding: 12px 15px; 
-  border-bottom: 2px solid #ffffff; 
-  text-align: left;
+  border-bottom: 2px solid #ffffff; /* Oddzielenie nagłówków od treści */
+  text-align: left; /* Wyrównanie tekstu do lewej */
 }
 
+/* Komórki tabeli */
 td {
-  padding: 12px 15px; 
-  border-bottom: 1px solid #eee; 
-  color: #555; 
+  padding: 12px 15px; /* Padding w komórkach */
+  border-bottom: 1px solid #eee; /* Subtelna linia oddzielająca wiersze */
+  color: #555; /* Kolor tekstu w komórkach */
   word-wrap: break-word; /* Zawijanie długich słów */
 }
 
+/* Kolor tła dla parzystych wierszy */
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
 
+/* Kolor tła wiersza przy najechaniu */
 tr:hover {
   background-color: #e6f7ff;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; /* Płynne przejście tła */
 }
 
 /* Ustalenie szerokości kolumn */
@@ -47,73 +53,16 @@ th:nth-child(2), td:nth-child(2) { width: 25%; }
 th:nth-child(3), td:nth-child(3) { width: 30%; }
 th:nth-child(4), td:nth-child(4) { width: 20%; }
 
+/* Komunikat o braku wyników */
 .no-results {
   font-size: 1.2rem;
-  color: #6a1b9a; 
+  color: #6a1b9a; /* Kolor tekstu */
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 600px;
-  text-align: center;
-}
-
-/* MEDIA QUERIES */
-
-/* Dla mniejszych ekranów np. tabletów */
-@media (max-width: 1024px) {
-  .table-container {
-    padding: 0 10px; /* Zmniejszony padding */
-  }
-
-  th, td {
-    font-size: 0.9rem; /* Mniejsza czcionka */
-    padding: 10px; 
-  }
-
-  /* Utrzymanie szerokości kolumn */
-  th:nth-child(1), td:nth-child(1),
-  th:nth-child(2), td:nth-child(2),
-  th:nth-child(3), td:nth-child(3),
-  th:nth-child(4), td:nth-child(4) {
-    width: auto; /* Kolumny bardziej elastyczne */
-  }
-}
-
-/* Dla bardzo małych ekranów np. smartfonów */
-@media (max-width: 600px) {
-  .table-container {
-    padding: 0 5px; /* Minimalny padding */
-  }
-
-  table {
-    font-size: 0.85rem; /* Mniejsza czcionka */
-    table-layout: auto; /* Automatyczne dopasowanie kolumn */
-  }
-
-  th, td {
-    padding: 8px; /* Mniejszy padding */
-    display: block; /* Komórki jako bloki */
-    width: 100%; /* Szerokość komórek na całą szerokość */
-  }
-
-  /* Stylizacja wierszy */
-  tr {
-    display: block; /* Wiersze w trybie blokowym */
-    margin-bottom: 10px; /* Dodanie odstępu między wierszami */
-  }
-
-  th {
-    display: none; /* Ukrywanie nagłówków kolumn na małych ekranach */
-  }
-
-  td::before {
-    content: attr(data-label); /* Dodanie etykiet do komórek */
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-  }
+  margin: 20px auto; /* Wyśrodkowanie komunikatu */
+  max-width: 600px; /* Maksymalna szerokość dla lepszej czytelności */
+  text-align: center; /* Wyśrodkowanie tekstu */
 }
