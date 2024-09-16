@@ -10,39 +10,39 @@
   
   .search-label {
     font-weight: bold; 
-    font-size: 1rem; /* Rozmiar czcionki */
-    color: #333; /* Kolor tekstu */
-    margin-bottom: 10px; /* Odstęp poniżej etykiety */
-    text-align: center; /* Wyśrodkowanie tekstu */
+    font-size: 1rem; 
+    color: #333; 
+    margin-bottom: 10px;
+    text-align: center; 
   }
   
   /* Kontener dla pól wyszukiwania, który ustawia je obok siebie */
   .search-filters {
     display: flex;
-    flex-wrap: wrap; /* Umożliwia zawijanie, jeśli brakuje miejsca */
-    gap: 10px; /* Odstępy między polami wyszukiwania */
+    flex-wrap: wrap; 
+    gap: 10px; 
   }
   
   .search-filters input {
-    padding: 8px 12px; /* Padding wewnętrzny */
+    padding: 8px 12px; 
     border: 1px solid #ddd;
-    border-radius: 25px; /* Zaokrąglone rogi */
-    font-size: 0.9rem; /* Mniejszy rozmiar czcionki */
-    transition: all 0.3s ease; /* Płynne przejście na focus */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Delikatny cień */
-    background-color: #f9f9f9; /* Delikatne tło */
-    outline: none; /* Usuń domyślny outline */
-    flex: 1; /* Umożliwia elastyczne dostosowanie rozmiaru */
+    border-radius: 25px;
+    font-size: 0.9rem; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    background-color: #f9f9f9; 
+    outline: none; 
+    flex: 1; 
   }
   
   .search-filters input:focus {
-    border-color: #6a1b9a; /* Kolor obramowania na focus */
-    box-shadow: 0 4px 8px rgba(106, 27, 154, 0.2); /* Intensywniejszy cień na focus */
-    background-color: #ffffff; /* Zmiana tła na biały na focus */
+    border-color: #6a1b9a; 
+    box-shadow: 0 4px 8px rgba(106, 27, 154, 0.2); 
+    background-color: #ffffff; 
   }
   
   .search-filters input::placeholder {
-    color: #888; /* Kolor placeholdera */
-    font-style: italic; /* Dodanie kursywy do placeholdera */
+    color: #888; 
+    font-style: italic; 
   }
   
